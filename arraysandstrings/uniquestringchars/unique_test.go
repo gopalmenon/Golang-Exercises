@@ -2,12 +2,10 @@ package uniquestringchars
 
 import (
 	"fmt"
-	"math/rand"
+	"golangexercises/arraysandstrings/util"
 	"testing"
 	"time"
 )
-
-const length = 10000
 
 func TestUniqueChars(t *testing.T) {
 
@@ -30,27 +28,13 @@ func TestUniqueChars(t *testing.T) {
 		t.Errorf("Found duplicates in %s", testStringUnique)
 	}
 
-	randomString := generateRandomRune(length)
+	randomString := util.GenerateRandomRune(util.Length)
 	start := time.Now()
 	HasUniqueCharsBySorting(randomString)
-	fmt.Printf("Checked %d elements in %s using sorting\n", length, time.Since(start))
+	fmt.Printf("Checked %d elements in %s using sorting\n", util.Length, time.Since(start))
 	start = time.Now()
 	HasUniqueCharsByHashing(randomString)
-	fmt.Printf("Checked %d elements in %s using hashing\n", length, time.Since(start))
+	fmt.Printf("Checked %d elements in %s using hashing\n", util.Length, time.Since(start))
 	start = time.Now()
 
-}
-
-var runes = []rune("一二三四五六七八九十1234567890")
-
-func generateRandomRune(n int) string {
-	randRune := make([]rune, n)
-
-	for i := range randRune {
-		// without this, the final value will be same all the time.
-		rand.Seed(time.Now().UnixNano())
-
-		randRune[i] = runes[rand.Intn(len(runes))]
-	}
-	return string(randRune)
 }
