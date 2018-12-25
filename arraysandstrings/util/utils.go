@@ -5,7 +5,12 @@ import (
 	"time"
 )
 
-const Length = 10000
+const (
+	Palindrome     = "madamimadam"
+	MyName         = "My name is a secret and I live in Utah"
+	ReversedMyName = "hatU ni evil I dna terces a si eman yM"
+	Length         = 10000
+)
 
 var runes = []rune("一二三四五六七八九十1234567890")
 

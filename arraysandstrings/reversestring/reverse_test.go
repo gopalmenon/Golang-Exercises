@@ -7,28 +7,22 @@ import (
 	"time"
 )
 
-const (
-	palindrome     = "madamimadam"
-	myName         = "My name is a secret and I live in Utah"
-	reversedMyName = "hatU ni evil I dna terces a si eman yM"
-)
-
 func TestReverseString(t *testing.T) {
 
-	if palindrome != reverse(palindrome) {
-		t.Errorf("Error in reversing %s", palindrome)
+	if util.Palindrome != reverse(util.Palindrome) {
+		t.Errorf("Error in reversing %s\n", util.Palindrome)
 	}
 
-	if palindrome != improvedReverse(palindrome) {
-		t.Errorf("Error in improved reversing %s", palindrome)
+	if util.Palindrome != improvedReverse(util.Palindrome) {
+		t.Errorf("Error in improved reversing %s\n", util.Palindrome)
 	}
 
-	if myName != reverse(reversedMyName) {
-		t.Errorf("Error in reversing %s", palindrome)
+	if util.MyName != reverse(util.ReversedMyName) {
+		t.Errorf("Error in reversing %s\n", util.Palindrome)
 	}
 
-	if myName != improvedReverse(reversedMyName) {
-		t.Errorf("Error in improved reversing %s", palindrome)
+	if util.MyName != improvedReverse(util.ReversedMyName) {
+		t.Errorf("Error in improved reversing %s\n", util.Palindrome)
 	}
 
 	randomString := util.GenerateRandomRune(util.Length)

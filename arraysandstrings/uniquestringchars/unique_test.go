@@ -13,19 +13,19 @@ func TestUniqueChars(t *testing.T) {
 	testStringUnique := "This man"
 
 	if HasUniqueCharsBySorting(testStringDups) {
-		t.Errorf("Could not locate duplicates in %s", testStringDups)
+		t.Errorf("Could not locate duplicates in %s\n", testStringDups)
 	}
 
 	if HasUniqueCharsByHashing(testStringDups) {
-		t.Errorf("Could not locate duplicates in %s", testStringDups)
+		t.Errorf("Could not locate duplicates in %s\n", testStringDups)
 	}
 
 	if !HasUniqueCharsBySorting(testStringUnique) {
-		t.Errorf("Found duplicates in %s", testStringUnique)
+		t.Errorf("Found duplicates in %s\n", testStringUnique)
 	}
 
 	if !HasUniqueCharsByHashing(testStringUnique) {
-		t.Errorf("Found duplicates in %s", testStringUnique)
+		t.Errorf("Found duplicates in %s\n", testStringUnique)
 	}
 
 	randomString := util.GenerateRandomRune(util.Length)
