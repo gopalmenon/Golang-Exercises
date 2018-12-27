@@ -62,10 +62,23 @@ func (l *List) Remove(n *Node) interface{} {
 	return n.Value
 }
 
+func (l *List) RemoveValue(v interface{}) bool {
+
+	for node := l.Head; node != nil; node = node.Next {
+		if node.Value == v {
+			l.Remove(node)
+			return true
+		}
+	}
+
+	return false
+}
+
 func (l *List) String() string {
 	var str strings.Builder
 	for node := l.Head; node != nil; node = node.Next {
 		str.WriteString(fmt.Sprint(node.Value))
+		str.WriteString(",")
 	}
 	return str.String()
 }

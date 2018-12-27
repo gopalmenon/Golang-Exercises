@@ -17,7 +17,7 @@ func TestLink(t *testing.T) {
 	l.Remove(elements[7])
 
 	fmt.Println(l)
-	if l.String() != "012345689" {
+	if l.String() != "0,1,2,3,4,5,6,8,9," {
 		t.Errorf("List should contain %s instead of %s\n", "012345689", l.String())
 	}
 
@@ -25,13 +25,17 @@ func TestLink(t *testing.T) {
 	l.Remove(elements[1])
 	l.Remove(elements[2])
 	l.Remove(elements[3])
-	l.Remove(elements[4])
+
+	if l.RemoveValue(4) == false {
+		t.Errorf("4 should have been found to remove\n")
+	}
+
 	l.Remove(elements[5])
 	l.Remove(elements[6])
 	l.Remove(elements[8])
 
 	fmt.Println(l)
-	if l.String() != "9" {
+	if l.String() != "9," {
 		t.Errorf("List should contain %s instead of %s\n", "9", l.String())
 	}
 	l.Remove(elements[9])
