@@ -10,14 +10,10 @@ func removeDupsWithHashing(l *linkedlists.List) {
 
 	hashtable := make(map[interface{}]int)
 	for node := l.Head; node != nil; node = node.Next {
-		hashtable[node.Value] += 1
-	}
-
-	for value, count := range hashtable {
-		if count > 1 {
-			for countsRemaining := count; countsRemaining > 1; countsRemaining-- {
-				l.RemoveValue(value)
-			}
+		if _, ok := hashtable[node.Value]; ok {
+			l.Remove(node)
+		} else {
+			hashtable[node.Value] += 1
 		}
 	}
 
