@@ -14,7 +14,7 @@ func New() *Stack {
 	return s
 }
 
-func (s *Stack) pop() interface{} {
+func (s *Stack) Pop() interface{} {
 
 	if s.top == nil {
 		return nil
@@ -26,7 +26,7 @@ func (s *Stack) pop() interface{} {
 
 }
 
-func (s *Stack) push(v interface{}) {
+func (s *Stack) Push(v interface{}) {
 
 	n := &Node{Value: v}
 	n.next = s.top
@@ -34,6 +34,6 @@ func (s *Stack) push(v interface{}) {
 
 }
 
-func (s *Stack) peek() interface{} {
+func (s *Stack) Peek() interface{} {
 	return s.top.Value
 }

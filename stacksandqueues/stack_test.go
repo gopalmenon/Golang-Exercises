@@ -9,18 +9,18 @@ import (
 func TestStack(t *testing.T) {
 
 	s := New()
-	s.push(9)
-	s.push(0)
-	s.push(0)
-	s.push(4)
-	s.push(8)
+	s.Push(9)
+	s.Push(0)
+	s.Push(0)
+	s.Push(4)
+	s.Push(8)
 
-	if v := s.peek(); v != 8 {
+	if v := s.Peek(); v != 8 {
 		t.Errorf("Peeked in stack. Expected 8 but got %d\n", v)
 	}
 
 	builder := strings.Builder{}
-	for v := s.pop(); v != nil; v = s.pop() {
+	for v := s.Pop(); v != nil; v = s.Pop() {
 		builder.WriteString(fmt.Sprintf("%d", v))
 	}
 
