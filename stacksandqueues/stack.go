@@ -9,13 +9,8 @@ type Stack struct {
 	top *Node
 }
 
-func (s *Stack) init() {
-	s.top = nil
-}
-
 func New() *Stack {
 	s := new(Stack)
-	s.init()
 	return s
 }
 
