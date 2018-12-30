@@ -3,11 +3,11 @@ package binarytrees
 import "fmt"
 
 type Node struct {
-	Value                 interface{}
+	Value                 int
 	LeftChild, RightChild *Node
 }
 
-func New(v interface{}) *Node {
+func New(v int) *Node {
 	return &Node{Value: v}
 }
 
