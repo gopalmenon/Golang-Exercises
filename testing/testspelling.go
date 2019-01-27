@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(spellchecker.CheckWord("candidatw"))
+	fmt.Println(spellchecker.CheckWord("woamn"))
 }
